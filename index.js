@@ -1,8 +1,10 @@
 require("dotenv").config();
 const express = require("express");
+const multer = require("multer");
 
 const app = express();
 const { docClient } = require("./helper/aws.helper");
+const { uploadFile } = require("./helper/file.helper");
 const tableName = "MonHoc";
 
 
@@ -11,6 +13,13 @@ app.use(express.static("./views"));
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
+
+// Middleware
+const stogare = multer.memoryStorage();
+const uploadMiddleware = multer({
+    stogare,
+    fileSize: 1024 * 1024 * 3,
+}).single("image");
 
 app.get("/", (req, res) => {
     const params = {
@@ -27,11 +36,22 @@ app.get("/", (req, res) => {
     })
 })
 
-app.post("/add", (req, res) => {
+app.post("/add", uploadMiddleware, async(req, res) => {
+
+    const file = req.file;
+    if (!file) {
+        console.log("Error: No file found!")
+        res.redirect("/")
+        return
+    }
+    const image = await uploadFile(file);
+    console.log(image);
     console.log(docClient)
+
+
     const params = {
         TableName: tableName,
-        Item: {...req.body, id: req.body.id - 0 }
+        Item: {...req.body, id: req.body.id - 0, image }
 
     }
 

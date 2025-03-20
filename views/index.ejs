@@ -11,7 +11,7 @@
 
 <body class="d-flex flex-column">
     <div class="d-flex flex-column w-25">
-        <form action="/add" method="post">
+        <form action="/add" method="post" enctype="multipart/form-data">
             <div class="mb-1">
                 <label for="id" class="form-label">ID</label>
                 <input type="number" class="form-control" id="id" name="id">
@@ -33,6 +33,10 @@
                 <input class="form-control" id="department" name="department">
             </div>
             <div class="mb-1">
+                <label for="image" class="form-label">Image</label>
+                <input class="form-control" id="image" name="image" type="file">
+            </div>
+            <div class="mb-1">
                 <button class="btn btn-primary w-100">Thêm</button>
             </div>
 
@@ -48,6 +52,7 @@
                     <th>Loai mon hoc</th>
                     <th>Hoc ky</th>
                     <th>Khoa</th>
+                    <th>Image</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -70,6 +75,9 @@
                         </td>
                         <td>
                             <%= item.department %>
+                        </td>
+                        <td>
+                            <img src="<%= item.image %>" class="h-25 w-25" alt="" srcset="">
                         </td>
                         <td>
                             <a href="delete/<%= item.id%>" class="btn btn-danger">Delete</button>

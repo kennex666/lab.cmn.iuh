@@ -11,7 +11,9 @@ AWS.config = config;
 
 const docClient = new AWS.DynamoDB.DocumentClient();
 
+const s3 = new AWS.S3();
+
 module.exports = {
-    AWS,
-    docClient
+    docClient,
+    s3
 }
