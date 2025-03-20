@@ -7,8 +7,7 @@ Lab này là một phần của chương trình giảng dạy thực hành tại
 - **Thầy:** Tôn Long Phước
 
 ## Sinh Viên Thực Hiện
-- **Tên:** Dương Thái Bảo
-- **Mã Sinh Viên:** 21037621
+Dương Thái Bảo - 21037621
 
 ## Mục Tiêu Lab
 Trong lab này:
