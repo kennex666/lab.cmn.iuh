@@ -18,7 +18,9 @@ app.set("views", "./views");
 const stogare = multer.memoryStorage();
 const uploadMiddleware = multer({
     stogare,
-    fileSize: 1024 * 1024 * 3,
+    limits: {
+        fileSize: 1024 * 1024 * 1
+    }
 }).single("image");
 
 app.get("/", (req, res) => {
