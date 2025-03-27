@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./tailwind.js"></script>
+    <title>21037621 - Duong Thai Bao</title>
+</head>
+
+<body class="w-full">
+    <div class="container mx-auto w-7/12 p-4 space-y-8">
+        <p class="text-red-500 text-lg font-bold">Nhà xuất bản ABZ</p>
+        <h2 class="text-3xl text-blue-500 font-bold uppercase text-center">Thêm báo mới</h2>
+
+        <table class="table-auto border-collapse border w-full">
+            <thead class="border bg-gray-300">
+                <tr class="border">
+                    <th class="border">Tên bài báo</th>
+                    <th class="border">Nhóm tác giả</th>
+                    <th class="border">Chỉ số ISBN</th>
+                    <th class="border">Số trang</th>
+                    <th class="border">Năm xuất bản</th>
+                    <th class="border">Upload hình</th>
+                    <th class="border">Action</th>
+                </tr>
+            </thead>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <tbody class="border">
+                    <tr class="border">
+                        <td class="border px-4 py-1">
+                            <input name="name" class="w-full border">
+                        </td>
+                        <td class="border px-4 py-1">
+                            <input name="authors" class="w-full border">
+                        </td>
+                        <td class="border px-4 py-1">
+                            <input name="isbn" class="w-full border">
+                        </td>
+                        <td class="border px-4 py-1">
+                            <input name="numberSheet" class="w-full border">
+                        </td>
+                        <td class="border px-4 py-1">
+                            <input name="year" class="w-full border">
+                        </td>
+                        <td class="border px-4 py-1">
+                            <input type="file" name="img" class="w-full border">
+                        </td>
+                        <td class="border px-4 py-1"><button type="submit" class="text-blue-700 hover:underline">Thêm</button></td>
+                    </tr>
+                </tbody>
+            </form>
+
+        </table>
+    </div>
+</body>
+
+</html>
